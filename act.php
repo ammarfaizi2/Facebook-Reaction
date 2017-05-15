@@ -9,15 +9,10 @@ is_dir(data) or mkdir(data);
 
 use System\Facebook;
 use Curl\CMCurl;
-
 header("Content-type:application/json");
 $fb = new Facebook($config['email'],$config['pass'],$config['user'],$config['token']);
 #print $fb->login();
-
-interface mgr
-{
-}
-$a = new class($config['token'],$config['user']) implements mgr 
+class aaa
 {
 	public function __construct($token,$user)
 	{
@@ -26,7 +21,7 @@ $a = new class($config['token'],$config['user']) implements mgr
 		is_dir(data.$user) or mkdir(data.$user);
 		file_exists(data.$user) ? null : file_put_contents(data.$user.'/target.txt', '');
 	}
-	public function get_new_post($id='me'): string {
+	public function get_new_post($id='me'){
 		$ch = new CMCurl('https://graph.facebook.com/'.$id.'/feed?limit=1&fields=id&access_token='.$this->token);
 		$dt = json_decode($ch->execute(),1) xor $ch->close();
 		return isset($dt['data'][0]['id']) ? substr($dt['data'][0]['id'],strpos($dt['data'][0]['id'], '_')+1) : false;
@@ -50,12 +45,13 @@ $a = new class($config['token'],$config['user']) implements mgr
 		return file_put_contents(data.$this->user.'/data.txt', json_encode($data,128));
 	}
 };
+$a = new aaa($config['token'],$config['user']);
 $data = $a->get_data(); 
 foreach ($a->get_target() as $key => $value) {
 	$cur_post = $a->get_new_post($key);
 	if(!isset($data[$key][$cur_post])){
 		$react = $value[rand(0,count($value)-1)];
-		$fb->reaction($cur_post,$react);
+		$cur_post!==false and $fb->reaction($cur_post,$react);
 		$data[$key][$cur_post] = array("reaction"=>$react,"date_time"=>date("Y-m-d H:i:s"));
 	}
 }
