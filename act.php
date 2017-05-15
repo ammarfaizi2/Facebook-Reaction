@@ -10,6 +10,7 @@ is_dir(data) or mkdir(data);
 use System\Facebook;
 use Curl\CMCurl;
 
+header("Content-type:application/json");
 $fb = new Facebook($config['email'],$config['pass'],$config['user'],$config['token']);
 #print $fb->login();
 
@@ -61,7 +62,7 @@ foreach ($a->get_target() as $key => $value) {
 $a->save($data);
 
 
-print_r($data);
+json_encode($data);
 
 
 
