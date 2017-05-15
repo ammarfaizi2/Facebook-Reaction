@@ -1,0 +1,21 @@
+{
+    "name": "root/fbreact",
+    "description": "Facebook Reaction",
+    "type": "Project",
+    "license": "RedAngel PHP Concept",
+    "authors": [
+        {
+            "name": "Ammar Faizi",
+            "email": "ammarfaizi2@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "ammarfaizi2/facebook": "dev-master"
+    },
+    "autoload":{
+        "psr-0": {
+            "System": "fbreact/"
+        }
+    }
+}

@@ -1,0 +1,78 @@
+[
+    {
+        "name": "ammarfaizi2/ratools",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/ammarfaizi2/RA_Tools.git",
+            "reference": "7c0bf4b5b38628c005c38a018e444770728b5331"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/ammarfaizi2/RA_Tools/zipball/7c0bf4b5b38628c005c38a018e444770728b5331",
+            "reference": "7c0bf4b5b38628c005c38a018e444770728b5331",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "time": "2017-05-06 13:06:50",
+        "type": "project",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Curl": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "RedAngel PHP Concept"
+        ],
+        "authors": [
+            {
+                "name": "Ammar Faizi",
+                "email": "ammarfaizi2@gmail.com"
+            }
+        ],
+        "description": "RA Tools"
+    },
+    {
+        "name": "ammarfaizi2/facebook",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/ammarfaizi2/Facebook.git",
+            "reference": "86261d6fff1551f3ac463349e07c19bde850344c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/ammarfaizi2/Facebook/zipball/86261d6fff1551f3ac463349e07c19bde850344c",
+            "reference": "86261d6fff1551f3ac463349e07c19bde850344c",
+            "shasum": ""
+        },
+        "require": {
+            "ammarfaizi2/ratools": "dev-master"
+        },
+        "time": "2017-05-15 12:38:11",
+        "type": "project",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "System": "facebook/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "RedAngel PHP Concept"
+        ],
+        "authors": [
+            {
+                "name": "Ammar Faizi",
+                "email": "ammarfaizi2@gmail.com"
+            }
+        ],
+        "description": "Facebook Utilities"
+    }
+]
